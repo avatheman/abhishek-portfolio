@@ -673,3 +673,20 @@ footer.site-footer a:hover{ color: var(--cyan); }
 }
 .availability-card h4{ font-size: 15px; margin-bottom: 10px; }
 .availability-card p{ font-size: 13.5px; color: var(--text-dim); line-height: 1.6; margin-bottom: 18px; }
+
+/* --- report link (research timeline) --- */
+.tl-report-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  border: 1px solid var(--cyan-dim);
+  padding: 7px 13px;
+  border-radius: 100px;
+  transition: all .15s var(--ease);
+}
+.tl-report-link:hover{ background: rgba(63,224,255,0.08); border-color: var(--cyan); }
+.tl-report-link svg{ flex-shrink: 0; }
