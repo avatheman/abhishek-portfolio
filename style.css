@@ -690,3 +690,26 @@ footer.site-footer a:hover{ color: var(--cyan); }
 }
 .tl-report-link:hover{ background: rgba(63,224,255,0.08); border-color: var(--cyan); }
 .tl-report-link svg{ flex-shrink: 0; }
+
+/* --- project team --- */
+.project-team{
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+.team-grid{ display: flex; flex-wrap: wrap; gap: 10px; }
+.team-member{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 13px;
+  color: var(--text-dim);
+  background: var(--bg-elevated);
+  transition: all .15s var(--ease);
+}
+.team-member svg{ color: var(--text-faint); flex-shrink: 0; transition: color .15s var(--ease); }
+.team-member:hover{ color: var(--cyan); border-color: var(--cyan-dim); }
+.team-member:hover svg{ color: var(--cyan); }
