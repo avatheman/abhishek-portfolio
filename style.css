@@ -713,3 +713,57 @@ footer.site-footer a:hover{ color: var(--cyan); }
 .team-member svg{ color: var(--text-faint); flex-shrink: 0; transition: color .15s var(--ease); }
 .team-member:hover{ color: var(--cyan); border-color: var(--cyan-dim); }
 .team-member:hover svg{ color: var(--cyan); }
+
+/* ============================================================
+   404 page
+   ============================================================ */
+.error-shell{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+}
+.error-code{
+  font-family: var(--font-display);
+  font-size: clamp(80px, 16vw, 160px);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(100deg, var(--cyan), var(--violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 6px;
+}
+.error-title{
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.error-sub{
+  color: var(--text-dim);
+  font-size: 14.5px;
+  max-width: 380px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.error-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 14px;
+}
+.error-links a{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 100px;
+  transition: all .15s var(--ease);
+}
+.error-links a:hover{ color: var(--cyan); border-color: var(--cyan-dim); }
