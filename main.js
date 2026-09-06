@@ -98,3 +98,51 @@
 
   render();
 })();
+
+// ============================================================
+// Lightbox (gallery page) — click a certificate or moment thumb
+// to view it full-size; closes on backdrop click, ✕, or Escape.
+// ============================================================
+(function(){
+  const lightbox = document.getElementById('lightbox');
+  if(!lightbox) return;
+
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbClose = lightbox.querySelector('.lightbox-close');
+
+  function open(src, caption){
+    lbImg.src = src;
+    lbImg.alt = caption || '';
+    lbCaption.textContent = caption || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+  function close(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+  }
+
+  document.querySelectorAll('[data-lightbox-src]').forEach(el => {
+    el.addEventListener('click', () => {
+      if(el.classList.contains('img-missing')) return;
+      open(el.dataset.lightboxSrc, el.dataset.lightboxCaption || '');
+    });
+  });
+
+  lbClose.addEventListener('click', close);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) close(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') close(); });
+})();
+
+// ============================================================
+// Graceful fallback for gallery images that haven't been added yet
+// ============================================================
+(function(){
+  document.querySelectorAll('.cert-thumb img, .moment-tile img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.closest('.cert-thumb, .moment-tile').classList.add('img-missing');
+    }, { once: true });
+  });
+})();
